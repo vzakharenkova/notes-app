@@ -36,11 +36,23 @@ $notes-app-theme: mat.define-light-theme(
 
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:display=swap');
+
 html,
 body {
   height: 100%;
 }
+html * {
+  box-sizing: border-box;
+  margin: 0;
+}
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(109.8deg, #f8c2e8 0%, #00c5cb 100%);
+  font-size: 1rem;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }

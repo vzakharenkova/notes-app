@@ -1,0 +1,19 @@
+@import 'src/app/shared/styles/shared';
+
+.header {
+  padding: $padding-y $padding-x;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $header-heignt;
+  .title {
+    font-weight: bold;
+    width: fit-content;
+    font-size: 2.5rem;
+  }
+  .menu {
+    height: 3rem;
+    width: 3rem;
+    font-size: 3rem;
+  }
+}
