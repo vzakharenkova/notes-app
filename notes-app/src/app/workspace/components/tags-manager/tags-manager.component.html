@@ -1,0 +1,47 @@
+<section class="tags_manager">
+  <div class="tags_manager__header" (click)="sideNav.close()"><mat-icon>close</mat-icon></div>
+  <div class="tags_manager__content">
+    <div class="tag_field">
+      <div class="input_wrapper">
+        <mat-icon>tag</mat-icon>
+        <input
+          [(ngModel)]="searchTerm"
+          type="text"
+          autocomplete="off"
+          autofocus
+          placeholder="Enter a tag"
+          class="tag_input"
+        />
+      </div>
+      <mat-icon *ngIf="!checkTag(searchTerm) && searchTerm" (click)="createNewTag(searchTerm)"
+        >add</mat-icon
+      >
+    </div>
+    <mat-list role="list" class="tag_list" *ngIf="tags | tagsFilter: searchTerm as filteredTags">
+      <ng-container *ngIf="filteredTags.length">
+        <ng-container *ngFor="let tag of filteredTags">
+          <div class="list_item__container">
+            <mat-list-item role="listitem" class="tag_list__item">
+              <div matListItemTitle>#{{ tag }}</div>
+            </mat-list-item>
+            <span
+              [matTooltipDisabled]="!tagIsUsed(tag)"
+              matTooltip="The tag is used by a note"
+              matTooltipPosition="left"
+              matTooltipClass="tooltip"
+              ><button
+                mat-icon-button
+                class="delete_btn"
+                (click)="openConfirmationModal(tag)"
+                [disabled]="tagIsUsed(tag)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button></span
+            >
+          </div>
+          <mat-divider></mat-divider>
+        </ng-container>
+      </ng-container>
+    </mat-list>
+  </div>
+</section>

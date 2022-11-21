@@ -1,0 +1,68 @@
+@import 'src/app/shared/styles/shared';
+
+.tags_manager {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+
+  &__header {
+    align-self: flex-end;
+
+    & mat-icon {
+      height: 3rem;
+      width: 3rem;
+      font-size: 3rem;
+      cursor: pointer;
+      transition: $hover-transition;
+
+      &:hover {
+        @include hover-text();
+      }
+    }
+  }
+
+  &__content {
+    font-size: 1rem;
+    height: 95%;
+    .tag_field {
+      border-radius: 1rem;
+      background-color: white;
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .input_wrapper {
+        width: 100%;
+        display: flex;
+      }
+
+      .tag_input {
+        outline: none;
+        border: none;
+        display: inline-block;
+        width: 100%;
+        align-self: center;
+        margin-left: 0.3rem;
+        font-size: 1rem;
+        background: transparent;
+      }
+    }
+
+    .tag_list {
+      width: 100%;
+      max-height: 90%;
+      overflow-y: auto;
+
+      .list_item__container {
+        display: flex;
+      }
+
+      .delete_btn {
+        cursor: pointer;
+      }
+    }
+  }
+}

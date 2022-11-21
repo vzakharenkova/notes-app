@@ -1,0 +1,31 @@
+@import 'src/app/shared/styles/shared';
+
+.footer {
+  padding: $padding-y $padding-x;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $footer-heignt;
+
+  .gh,
+  .year {
+    display: flex;
+    align-items: center;
+  }
+  .gh {
+    &_logo {
+      display: inline-block;
+      height: 1.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .year {
+    &_icon {
+      margin-right: 0.5rem;
+      height: 1.5rem;
+      width: 1.5rem;
+      font-size: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+@import 'src/app/shared/styles/shared';
+
+.note {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  width: 25rem;
+  min-height: 10rem;
+
+  @media screen and (max-width: 530px) {
+    width: 20rem;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 15rem;
+  }
+
+  &_content {
+    margin: 0.5rem 0;
+  }
+
+  &_description {
+    margin: 1rem 0;
+  }
+
+  .close_btn {
+    align-self: flex-end;
+    background: $aqua;
+
+    &:hover {
+      @include hover-element;
+    }
+
+    mat-icon {
+      height: 1.8rem;
+      width: 1.8rem;
+      font-size: 1.8rem;
+    }
+  }
+
+  .note_actions {
+    margin-top: 1rem;
+    display: flex;
+
+    @media screen and (max-width: 400px) {
+      flex-direction: column;
+    }
+
+    .btn {
+      align-self: flex-start;
+      min-width: 6rem;
+
+      @media screen and (max-width: 400px) {
+        align-self: center;
+      }
+    }
+    .delete_btn {
+      background-color: #fff0f0;
+      color: #b80020;
+      margin-left: 1rem;
+
+      @media screen and (max-width: 400px) {
+        margin-left: 0;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

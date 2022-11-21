@@ -1,0 +1,14 @@
+<div mat-dialog class="modal">
+  <button mat-dialog-close mat-mini-fab class="close_btn">
+    <mat-icon>clear</mat-icon>
+  </button>
+  <div class="modal_title">{{ data.title }}</div>
+  <div class="modal_content">
+    <span>
+      Do you want to delete
+      <span class="modal_content-highlighted">{{ data.content }}</span
+      >?
+    </span>
+  </div>
+  <button mat-raised-button class="delete_btn" (click)="data.handler()">Delete</button>
+</div>

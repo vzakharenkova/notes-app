@@ -1,0 +1,95 @@
+@import 'src/app/shared/styles/shared';
+
+.workspace {
+  width: 100vw;
+  min-height: $main-heignt;
+  padding: 0 $padding-x;
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: $padding-y;
+
+    @media screen and (max-width: 640px) {
+      flex-direction: column-reverse;
+    }
+
+    .filter_panel {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+
+      @media screen and (max-width: 490px) {
+        flex-direction: column;
+      }
+
+      .filter_label {
+        min-width: 6rem;
+        margin-right: 1rem;
+        font-weight: bolder;
+
+        @media screen and (max-width: 490px) {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      .input_wrapper {
+        width: 20rem;
+        display: flex;
+        border-radius: 1rem;
+        background-color: white;
+        padding: 0.5rem 1rem;
+
+        @media screen and (max-width: 768px) {
+          width: 15rem;
+        }
+
+        @media screen and (max-width: 490px) {
+          width: fit-content;
+        }
+
+        .filter_input {
+          outline: none;
+          border: none;
+          display: inline-block;
+          width: 100%;
+          align-self: center;
+          margin-left: 0.3rem;
+          font-size: 1rem;
+          background: transparent;
+        }
+      }
+    }
+
+    .create_btn {
+      background-color: $pink;
+      min-width: 6rem;
+      font-weight: bolder;
+      font-size: 1rem;
+
+      @media screen and (max-width: 640px) {
+        align-self: flex-end;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .notes_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    @media screen and (max-width: 1280px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
