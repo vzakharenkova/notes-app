@@ -1,5 +1,7 @@
 <mat-drawer-container class="app-container">
-  <mat-drawer #sideNav mode="over" position="end" class="sidenav"> Right drawer </mat-drawer>
+  <mat-drawer #sideNav mode="over" position="end" class="sidenav"
+    ><app-tags-manager [sideNav]="sideNav"></app-tags-manager
+  ></mat-drawer>
   <mat-drawer-content>
     <app-header [sideNav]="sideNav"></app-header>
     <router-outlet></router-outlet>
