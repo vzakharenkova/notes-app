@@ -56,3 +56,11 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.tooltip * {
+  font-size: 1rem;
+  white-space: pre-wrap;
+  color: black !important;
+  background: #f8c2e8 !important;
+  max-width: unset !important;
+}
