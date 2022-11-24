@@ -1,1 +1,25 @@
-<main class="workspace"></main>
+<main class="workspace">
+  <section class="actions">
+    <div class="filter_panel">
+      <label htmlFor="filter" class="filter_label">Filter by tag:</label>
+      <div class="input_wrapper">
+        <mat-icon>tag</mat-icon>
+        <input
+          [(ngModel)]="filterTerm"
+          type="text"
+          autocomplete="off"
+          placeholder="Enter a tag"
+          class="filter_input"
+        />
+      </div>
+    </div>
+    <button mat-raised-button class="create_btn">
+      <mat-icon>edit</mat-icon><span>Create note</span>
+    </button>
+  </section>
+  <ng-container *ngIf="notes | notesFilter: filterTerm as filteredNotes">
+    <section class="notes_list" *ngIf="filteredNotes.length">
+      <app-note *ngFor="let note of filteredNotes" [note]="note"></app-note>
+    </section>
+  </ng-container>
+</main>

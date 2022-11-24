@@ -3,4 +3,55 @@
 .workspace {
   width: 100vw;
   min-height: $main-heignt;
+  padding: 0 $padding-x;
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: $padding-y;
+
+    .filter_panel {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      .filter_label {
+        min-width: 6rem;
+        margin-right: 1rem;
+        font-weight: bolder;
+      }
+
+      .input_wrapper {
+        width: 20rem;
+        display: flex;
+        border-radius: 1rem;
+        background-color: white;
+        padding: 0.5rem 1rem;
+
+        .filter_input {
+          outline: none;
+          border: none;
+          display: inline-block;
+          width: 100%;
+          align-self: center;
+          margin-left: 0.3rem;
+          font-size: 1rem;
+          background: transparent;
+        }
+      }
+    }
+
+    .create_btn {
+      background-color: #f8c2e8;
+      min-width: 6rem;
+      font-weight: bolder;
+      font-size: 1rem;
+    }
+  }
+
+  .notes_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
 }

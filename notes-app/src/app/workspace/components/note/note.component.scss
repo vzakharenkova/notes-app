@@ -1,0 +1,25 @@
+@import 'src/app/shared/styles/shared';
+
+.note {
+  height: 10rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: $hover-transition;
+  cursor: pointer;
+
+  &:hover {
+    @include hover-element;
+  }
+
+  .tag {
+    transition: $hover-transition;
+    cursor: pointer;
+    &:hover {
+      color: rgb(0, 197, 203);
+      @include hover-tag();
+    }
+  }
+}

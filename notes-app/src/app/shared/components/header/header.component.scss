@@ -15,5 +15,11 @@
     height: 3rem;
     width: 3rem;
     font-size: 3rem;
+    cursor: pointer;
+    transition: $hover-transition;
+
+    &:hover {
+      @include hover-text();
+    }
   }
 }

@@ -5,3 +5,17 @@ $sidenav-padding: $padding-y $padding-x $padding-y 1.5rem;
 $header-heignt: 6rem;
 $footer-heignt: 4.7rem;
 $main-heignt: calc(100vh - $header-heignt - $footer-heignt);
+
+$hover-transition: all 0.3s;
+
+@mixin hover-element {
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+@mixin hover-tag {
+  filter: drop-shadow(5px 5px 5px rgba(0, 197, 203, 0.5));
+}
+
+@mixin hover-text {
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
