@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { ConfirmationModalComponent } from 'src/app/shared/components/confirmation-modal/confirmation-modal.component';
 import { NoteModel } from '../../models/workspace.models';
+import { NoteFormModalComponent } from '../note-form-modal/note-form-modal.component';
 
 @Component({
   selector: 'app-note-modal',
@@ -21,6 +22,12 @@ export class NoteModalComponent {
         content: `${this.data.note.title}`,
         // handler: () => this.deleteTask(this.column, this.task),
       },
+    });
+  }
+
+  openEditModal() {
+    this.dialog.open(NoteFormModalComponent, {
+      data: this.data,
     });
   }
 }

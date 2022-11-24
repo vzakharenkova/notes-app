@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { NoteFormModalComponent } from './components/note-form-modal/note-form-modal.component';
 import { NoteModalComponent } from './components/note-modal/note-modal.component';
 import { NoteModel } from './models/workspace.models';
 import { WorkspaceService } from './services/workspace.service';
@@ -26,5 +27,9 @@ export class WorkspaceComponent implements OnInit {
         note,
       },
     });
+  }
+
+  openCreationForm() {
+    this.dialog.open(NoteFormModalComponent);
   }
 }

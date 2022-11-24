@@ -1,0 +1,56 @@
+@import 'src/app/shared/styles/shared';
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  min-width: 25rem;
+  min-height: 10rem;
+
+  .close_btn {
+    align-self: flex-end;
+    background: #00c5cb;
+
+    &:hover {
+      @include hover-element;
+    }
+
+    mat-icon {
+      height: 1.8rem;
+      width: 1.8rem;
+      font-size: 1.8rem;
+    }
+  }
+
+  .note_form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+
+    mat-error {
+      font-size: 0.7rem;
+    }
+
+    .form_field:not(:last-child) {
+      padding-bottom: 1rem;
+    }
+
+    .form_color {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .options_group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding-left: 1rem;
+      }
+    }
+
+    .action_btn {
+      width: 7rem;
+      align-self: center;
+    }
+  }
+}

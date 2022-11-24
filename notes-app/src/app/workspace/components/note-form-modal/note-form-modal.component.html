@@ -1,0 +1,53 @@
+<div mat-dialog class="modal" [ngClass]="color?.value">
+  <button mat-dialog-close mat-mini-fab class="close_btn">
+    <mat-icon>clear</mat-icon>
+  </button>
+  <form class="note_form" [formGroup]="noteForm">
+    <mat-form-field appearance="outline" class="form_field">
+      <mat-label>Note title</mat-label>
+      <input
+        matInput
+        placeholder="Enter note title"
+        class="input"
+        formControlName="title"
+        autocomplete="off"
+      />
+      <mat-error *ngIf="title?.hasError('required')">{{ requiredErrorMsg }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="form_field">
+      <mat-label>Note description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+      <mat-error *ngIf="description?.hasError('required')">{{ requiredErrorMsg }}</mat-error>
+    </mat-form-field>
+    <div class="form_field form_color">
+      <label>Color: </label>
+      <mat-radio-group formControlName="color" class="options_group">
+        <mat-radio-button [value]="colors.PINK">Pink</mat-radio-button>
+        <mat-radio-button [value]="colors.BLACK">Black</mat-radio-button>
+        <mat-radio-button [value]="colors.BLUE">Blue</mat-radio-button>
+        <mat-radio-button [value]="colors.GRAPE">Grape</mat-radio-button>
+        <mat-radio-button [value]="colors.SILVER">Silver</mat-radio-button>
+        <mat-radio-button [value]="colors.YELLOW">Yellow</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <mat-form-field appearance="outline" class="form_field">
+      <mat-label>Tags</mat-label>
+      <mat-chip-grid #chipGrid aria-label="Enter tags" formControlName="tags">
+        <mat-chip-row *ngFor="let tag of tags?.value" (removed)="removeTag(tag)">
+          {{ tag }}
+          <button matChipRemove aria-label="'remove ' + tag">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+        <input
+          placeholder="New tags..."
+          autocomplete="off"
+          [matChipInputFor]="chipGrid"
+          [matChipInputAddOnBlur]="true"
+          (matChipInputTokenEnd)="addTag($event)"
+        />
+      </mat-chip-grid>
+    </mat-form-field>
+    <button mat-raised-button class="action_btn">{{ data?.note ? 'Edit' : 'Create' }}</button>
+  </form>
+</div>
