@@ -2,6 +2,8 @@
   <h2>{{ note.title }}</h2>
   <div>{{ cutInfo(note.description, 30) }}</div>
   <div *ngIf="note.tags.length">
-    <span *ngFor="let tag of note.tags" class="tag">#{{ tag }}</span>
+    <span *ngFor="let tag of note.tags" class="tag" (click)="filterByTag($event, tag)"
+      >#{{ tag }}</span
+    >
   </div>
 </mat-card>

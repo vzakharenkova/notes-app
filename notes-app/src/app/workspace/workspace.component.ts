@@ -19,6 +19,7 @@ export class WorkspaceComponent implements OnInit {
 
   ngOnInit(): void {
     this.workspaceService.getNotes().subscribe((res) => (this.notes = res.notes));
+    this.workspaceService.filterTerm$.subscribe((filterTerm) => (this.filterTerm = filterTerm));
   }
 
   openNote(note: NoteModel) {
@@ -31,5 +32,9 @@ export class WorkspaceComponent implements OnInit {
 
   openCreationForm() {
     this.dialog.open(NoteFormModalComponent);
+  }
+
+  filterNotes(tag: string) {
+    this.workspaceService.filterByTag(tag);
   }
 }

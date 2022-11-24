@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { ConfirmationModalComponent } from 'src/app/shared/components/confirmation-modal/confirmation-modal.component';
 import { NoteModel } from '../../models/workspace.models';
+import { WorkspaceService } from '../../services/workspace.service';
 import { NoteFormModalComponent } from '../note-form-modal/note-form-modal.component';
 
 @Component({
@@ -13,6 +14,7 @@ export class NoteModalComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: { note: NoteModel },
     public dialog: MatDialog,
+    private workspaceService: WorkspaceService,
   ) {}
 
   openConfirmationModal() {
@@ -29,5 +31,10 @@ export class NoteModalComponent {
     this.dialog.open(NoteFormModalComponent, {
       data: this.data,
     });
+  }
+
+  filterByTag(tag: string) {
+    this.dialog.closeAll();
+    this.workspaceService.filterByTag(tag);
   }
 }

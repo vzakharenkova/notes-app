@@ -5,7 +5,8 @@
       <div class="input_wrapper">
         <mat-icon>tag</mat-icon>
         <input
-          [(ngModel)]="filterTerm"
+          [ngModel]="filterTerm"
+          (ngModelChange)="filterNotes($event)"
           type="text"
           autocomplete="off"
           placeholder="Enter a tag"

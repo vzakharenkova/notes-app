@@ -6,7 +6,9 @@
     <h2 class="note_title">{{ data.note.title }}</h2>
     <div class="note_description">{{ data.note.description }}</div>
     <div *ngIf="data.note.tags && data.note.tags.length" class="note_tags">
-      <span *ngFor="let tag of data.note.tags" class="tag">#{{ tag }}</span>
+      <span *ngFor="let tag of data.note.tags" class="tag" (click)="filterByTag(tag)"
+        >#{{ tag }}</span
+      >
     </div>
   </div>
   <div class="note_actions">

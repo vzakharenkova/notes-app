@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NoteModel } from '../../models/workspace.models';
+import { WorkspaceService } from '../../services/workspace.service';
 
 @Component({
   selector: 'app-note',
@@ -9,10 +10,17 @@ import { NoteModel } from '../../models/workspace.models';
 export class NoteComponent {
   @Input() note: NoteModel;
 
+  constructor(private workspaceService: WorkspaceService) {}
+
   cutInfo(term: string, length: number) {
     if (term.length > length) {
       return `${term.slice(0, length)}...`;
     }
     return term;
+  }
+
+  filterByTag(event: Event, tag: string) {
+    event.stopPropagation();
+    this.workspaceService.filterByTag(tag);
   }
 }
