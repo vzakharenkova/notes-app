@@ -19,7 +19,11 @@
   </section>
   <ng-container *ngIf="notes | notesFilter: filterTerm as filteredNotes">
     <section class="notes_list" *ngIf="filteredNotes.length">
-      <app-note *ngFor="let note of filteredNotes" [note]="note"></app-note>
+      <app-note
+        *ngFor="let note of filteredNotes"
+        [note]="note"
+        (click)="openNote(note)"
+      ></app-note>
     </section>
   </ng-container>
 </main>

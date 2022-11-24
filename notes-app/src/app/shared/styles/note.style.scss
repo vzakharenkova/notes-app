@@ -1,23 +1,68 @@
+@import 'src/app/shared/styles/shared';
+
 .pink {
   border-top: solid 0.8rem #ff7caf;
+
+  .close_btn,
+  .edit_btn {
+    background: #ff7caf;
+    color: white;
+  }
 }
 
 .blue {
   border-top: solid 0.8rem #027ce2;
+
+  .close_btn,
+  .edit_btn {
+    background: #027ce2;
+    color: white;
+  }
 }
 
 .grape {
   border-top: solid 0.8rem #64507b;
+
+  .close_btn,
+  .edit_btn {
+    background: #64507b;
+    color: white;
+  }
 }
 
 .yellow {
   border-top: solid 0.8rem #ffc700;
+
+  .close_btn,
+  .edit_btn {
+    background: #ffc700;
+  }
 }
 
 .silver {
   border-top: solid 0.8rem #a6a6a6;
+
+  .close_btn,
+  .edit_btn {
+    background: #a6a6a6;
+  }
 }
 
 .black {
   border-top: solid 0.8rem #202225;
+
+  .close_btn,
+  .edit_btn {
+    background: #202225;
+    color: white;
+  }
+}
+
+.tag {
+  transition: $hover-transition;
+  cursor: pointer;
+  &:hover {
+    color: rgb(0, 197, 203);
+    @include hover-tag();
+  }
 }

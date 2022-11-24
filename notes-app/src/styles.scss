@@ -73,3 +73,7 @@ a {
 .mdc-list-item.mdc-list-item--with-two-lines {
   height: fit-content !important;
 }
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 1rem !important;
+}

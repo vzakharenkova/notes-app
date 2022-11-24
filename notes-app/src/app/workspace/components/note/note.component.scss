@@ -13,13 +13,4 @@
   &:hover {
     @include hover-element;
   }
-
-  .tag {
-    transition: $hover-transition;
-    cursor: pointer;
-    &:hover {
-      color: rgb(0, 197, 203);
-      @include hover-tag();
-    }
-  }
 }

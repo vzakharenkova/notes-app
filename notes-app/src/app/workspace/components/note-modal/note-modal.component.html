@@ -1,0 +1,18 @@
+<div mat-dialog class="note" [ngClass]="data.note.color">
+  <button mat-dialog-close mat-mini-fab class="close_btn">
+    <mat-icon>clear</mat-icon>
+  </button>
+  <div class="note_content">
+    <h2 class="note_title">{{ data.note.title }}</h2>
+    <div class="note_description">{{ data.note.description }}</div>
+    <div *ngIf="data.note.tags && data.note.tags.length" class="note_tags">
+      <span *ngFor="let tag of data.note.tags" class="tag">#{{ tag }}</span>
+    </div>
+  </div>
+  <div class="note_actions">
+    <button mat-raised-button class="edit_btn btn">Edit</button>
+    <button mat-raised-button class="delete_btn btn" (click)="openConfirmationModal()">
+      Delete
+    </button>
+  </div>
+</div>

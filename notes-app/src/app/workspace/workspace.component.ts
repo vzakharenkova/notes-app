@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { NoteModalComponent } from './components/note-modal/note-modal.component';
 import { NoteModel } from './models/workspace.models';
 import { WorkspaceService } from './services/workspace.service';
 
@@ -12,9 +14,17 @@ export class WorkspaceComponent implements OnInit {
 
   filterTerm: string = '';
 
-  constructor(private workspaceService: WorkspaceService) {}
+  constructor(private workspaceService: WorkspaceService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.workspaceService.getNotes().subscribe((res) => (this.notes = res.notes));
+  }
+
+  openNote(note: NoteModel) {
+    this.dialog.open(NoteModalComponent, {
+      data: {
+        note,
+      },
+    });
   }
 }
