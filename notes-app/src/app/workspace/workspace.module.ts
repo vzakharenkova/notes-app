@@ -27,6 +27,17 @@ const routes: Routes = [
     HighlightDirective,
   ],
   imports: [SharedModule, RouterModule.forChild(routes)],
-  exports: [RouterModule, TagsManagerComponent],
+  exports: [
+    RouterModule,
+    TagsManagerComponent,
+    WorkspaceComponent,
+    TagsManagerComponent,
+    NoteComponent,
+    TagsFilterPipe,
+    NotesFilterPipe,
+    NoteModalComponent,
+    NoteFormModalComponent,
+    HighlightDirective,
+  ],
 })
 export class WorkspaceModule {}
