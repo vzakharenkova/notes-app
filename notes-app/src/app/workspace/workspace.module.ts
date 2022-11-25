@@ -12,7 +12,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 
 const routes: Routes = [
   { path: 'notes', component: WorkspaceComponent },
-  { path: '**', redirectTo: 'notes', pathMatch: 'full' },
+  // { path: '**', redirectTo: 'notes', pathMatch: 'full' },
 ];
 
 @NgModule({
