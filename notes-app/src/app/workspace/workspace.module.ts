@@ -27,6 +27,6 @@ const routes: Routes = [
     HighlightDirective,
   ],
   imports: [SharedModule, RouterModule.forChild(routes)],
-  exports: [TagsManagerComponent],
+  exports: [RouterModule],
 })
 export class WorkspaceModule {}
