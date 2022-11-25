@@ -2,52 +2,17 @@
   "notes": [
     {
       "id": "8",
-      "title": "#Test vbg",
-      "description": "#sfew ewrgr vwege",
-      "tags": ["refrt", "efewge"],
+      "title": "#shopping",
+      "description": "Buy #apple",
+      "tags": ["apple"],
       "color": "pink"
     },
     {
       "id": "6",
-      "title": "Test",
-      "description": "sfew #ewrgr vwege",
-      "tags": ["test", "apple"],
+      "title": "Morning",
+      "description": "#car",
+      "tags": ["car"],
       "color": "grape"
-    },
-    {
-      "id": "5",
-      "title": "Test",
-      "description": "sfew ewrgr vwege",
-      "tags": ["refrt", "efewge"],
-      "color": "grape"
-    },
-    {
-      "id": "y476",
-      "title": "Test",
-      "description": "sfew ewrgr vwege",
-      "tags": ["refrt", "efewge"],
-      "color": "yellow"
-    },
-    {
-      "id": "474676",
-      "title": "Test",
-      "description": "sfew ewrgr vwege",
-      "tags": ["refrt", "efewge"],
-      "color": "silver"
-    },
-    {
-      "id": "0679",
-      "title": "Test",
-      "description": "sfew ewrgr vwege",
-      "tags": ["refrt", "efewge"],
-      "color": "black"
-    },
-    {
-      "id": "1",
-      "title": "Test",
-      "description": "sfew ewrgr vwege",
-      "tags": ["refrt", "efewge"],
-      "color": "blue"
     }
   ]
 }

@@ -89,6 +89,10 @@ export class NoteFormModalComponent implements OnInit {
   }
 
   submitNoteForm() {
+    if (this.newTag.length) {
+      this.tags?.value.push(this.newTag);
+      this.newTag = '';
+    }
     const note: NoteModel = {
       id: this.data?.note.id || generateId(),
       title: this.title?.value,
