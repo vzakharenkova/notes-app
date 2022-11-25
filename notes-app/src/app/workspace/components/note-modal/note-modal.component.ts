@@ -22,7 +22,7 @@ export class NoteModalComponent {
       data: {
         title: 'Delete note',
         content: `${this.data.note.title}`,
-        // handler: () => this.deleteTask(this.column, this.task),
+        handler: () => this.deleteNote(this.data.note),
       },
     });
   }
@@ -36,5 +36,10 @@ export class NoteModalComponent {
   filterByTag(tag: string) {
     this.dialog.closeAll();
     this.workspaceService.filterByTag(tag);
+  }
+
+  deleteNote(note: NoteModel) {
+    this.workspaceService.deleteNote(note);
+    this.dialog.closeAll();
   }
 }

@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'tagsFilter',
+  pure: false,
 })
 export class TagsFilterPipe implements PipeTransform {
   transform(tags: string[], filterTerm: string): string[] {

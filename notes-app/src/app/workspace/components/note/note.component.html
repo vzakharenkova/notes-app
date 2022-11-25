@@ -1,9 +1,10 @@
 <mat-card class="note" [ngClass]="note.color">
   <h2>{{ note.title }}</h2>
   <div>{{ cutInfo(note.description, 30) }}</div>
-  <div *ngIf="note.tags.length">
+  <div *ngIf="note.tags.length; else elseBlock">
     <span *ngFor="let tag of note.tags" class="tag" (click)="filterByTag($event, tag)"
       >#{{ tag }}</span
     >
   </div>
+  <ng-template #elseBlock>No selected tags</ng-template>
 </mat-card>

@@ -16,10 +16,10 @@ export class TagsManagerComponent implements OnInit {
 
   tags: string[];
 
-  constructor(private workspaceService: WorkspaceService, public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private workspaceService: WorkspaceService) {}
 
   ngOnInit(): void {
-    this.workspaceService.getTags().subscribe((res) => (this.tags = res.tags));
+    this.workspaceService.getTags().subscribe((tags) => (this.tags = tags));
   }
 
   openConfirmationModal(tag: string) {
@@ -27,8 +27,23 @@ export class TagsManagerComponent implements OnInit {
       data: {
         title: 'Delete tag',
         content: `#${tag}`,
-        // handler: () => this.deleteTask(this.column, this.task),
+        handler: () => this.deleteTag(tag),
       },
     });
+  }
+
+  checkTag(tag: string) {
+    return this.workspaceService.checkTag(tag);
+  }
+
+  createNewTag(tag: string) {
+    if (!this.checkTag(tag)) {
+      this.workspaceService.createTag(tag);
+    }
+  }
+
+  deleteTag(tag: string) {
+    this.workspaceService.deleteTag(tag);
+    this.dialog.closeAll();
   }
 }

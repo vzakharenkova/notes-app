@@ -8,6 +8,7 @@ import { NoteComponent } from './components/note/note.component';
 import { NotesFilterPipe } from './pipes/notes-filter.pipe';
 import { NoteModalComponent } from './components/note-modal/note-modal.component';
 import { NoteFormModalComponent } from './components/note-form-modal/note-form-modal.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 const routes: Routes = [{ path: 'notes', component: WorkspaceComponent }];
 
@@ -20,6 +21,7 @@ const routes: Routes = [{ path: 'notes', component: WorkspaceComponent }];
     NotesFilterPipe,
     NoteModalComponent,
     NoteFormModalComponent,
+    HighlightDirective,
   ],
   imports: [SharedModule, RouterModule.forChild(routes)],
   exports: [TagsManagerComponent],

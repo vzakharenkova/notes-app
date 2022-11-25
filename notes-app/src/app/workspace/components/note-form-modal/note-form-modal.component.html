@@ -2,7 +2,7 @@
   <button mat-dialog-close mat-mini-fab class="close_btn">
     <mat-icon>clear</mat-icon>
   </button>
-  <form class="note_form" [formGroup]="noteForm">
+  <form class="note_form" [formGroup]="noteForm" (ngSubmit)="submitNoteForm()">
     <mat-form-field appearance="outline" class="form_field">
       <mat-label>Note title</mat-label>
       <input
@@ -48,6 +48,8 @@
         />
       </mat-chip-grid>
     </mat-form-field>
-    <button mat-raised-button class="action_btn">{{ data?.note ? 'Edit' : 'Create' }}</button>
+    <button type="submit" mat-raised-button class="action_btn" [disabled]="noteForm.invalid">
+      {{ data?.note ? 'Edit' : 'Create' }}
+    </button>
   </form>
 </div>

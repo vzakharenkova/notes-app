@@ -3,6 +3,7 @@ import { NoteModel } from '../models/workspace.models';
 
 @Pipe({
   name: 'notesFilter',
+  pure: false,
 })
 export class NotesFilterPipe implements PipeTransform {
   transform(notes: NoteModel[], filterTerm: string): NoteModel[] {

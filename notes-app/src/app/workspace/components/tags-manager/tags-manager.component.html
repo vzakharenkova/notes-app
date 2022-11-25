@@ -13,7 +13,9 @@
           class="tag_input"
         />
       </div>
-      <mat-icon>add</mat-icon>
+      <mat-icon *ngIf="!checkTag(searchTerm) && searchTerm" (click)="createNewTag(searchTerm)"
+        >add</mat-icon
+      >
     </div>
     <mat-list role="list" class="tag_list" *ngIf="tags | tagsFilter: searchTerm as filteredTags">
       <ng-container *ngIf="filteredTags.length">
