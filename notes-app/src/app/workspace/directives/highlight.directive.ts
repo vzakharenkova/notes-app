@@ -20,6 +20,11 @@ export class HighlightDirective implements OnInit {
       return this.text;
     }
 
-    return this.text.replace(re, `<span class="highlighted">${match[0]}</span>`);
+    let textCopy = this.text;
+    match.forEach(
+      (tag) => (textCopy = this.text.replace(re, `<span class="highlighted">${tag}</span>`)),
+    );
+
+    return textCopy;
   }
 }

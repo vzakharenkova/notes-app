@@ -11,12 +11,17 @@
         class="input"
         formControlName="title"
         autocomplete="off"
+        (ngModelChange)="createTag($event)"
       />
       <mat-error *ngIf="title?.hasError('required')">{{ requiredErrorMsg }}</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="form_field">
       <mat-label>Note description</mat-label>
-      <textarea matInput formControlName="description"></textarea>
+      <textarea
+        matInput
+        formControlName="description"
+        (ngModelChange)="createTag($event)"
+      ></textarea>
       <mat-error *ngIf="description?.hasError('required')">{{ requiredErrorMsg }}</mat-error>
     </mat-form-field>
     <div class="form_field form_color">

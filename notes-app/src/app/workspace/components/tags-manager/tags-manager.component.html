@@ -24,9 +24,20 @@
             <mat-list-item role="listitem" class="tag_list__item">
               <div matListItemTitle>#{{ tag }}</div>
             </mat-list-item>
-            <button mat-icon-button class="delete_btn" (click)="openConfirmationModal(tag)">
-              <mat-icon>delete</mat-icon>
-            </button>
+            <span
+              [matTooltipDisabled]="!tagIsUsed(tag)"
+              matTooltip="The tag is used by a note"
+              matTooltipPosition="left"
+              matTooltipClass="tooltip"
+              ><button
+                mat-icon-button
+                class="delete_btn"
+                (click)="openConfirmationModal(tag)"
+                [disabled]="tagIsUsed(tag)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button></span
+            >
           </div>
           <mat-divider></mat-divider>
         </ng-container>

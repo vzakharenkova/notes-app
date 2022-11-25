@@ -16,6 +16,8 @@ export class NoteFormModalComponent implements OnInit {
 
   noteForm: FormGroup;
 
+  newTag: string = '';
+
   requiredErrorMsg = 'This field is required';
 
   constructor(
@@ -48,6 +50,24 @@ export class NoteFormModalComponent implements OnInit {
     const index = this.tags?.value.indexOf(tag);
     if (index >= 0) {
       this.tags?.value.splice(index, 1);
+    }
+  }
+
+  createTag(text: string) {
+    if (!this.newTag.length) {
+      if (text[text.length - 2] !== '#') {
+        return;
+      } else {
+        this.newTag += text[text.length - 1];
+        return;
+      }
+    } else {
+      if (!text[text.length - 1].match(/[A-Za-zА-Яа-я0-9]/g)) {
+        this.tags?.value.push(this.newTag);
+        this.newTag = '';
+      } else {
+        this.newTag += text[text.length - 1];
+      }
     }
   }
 

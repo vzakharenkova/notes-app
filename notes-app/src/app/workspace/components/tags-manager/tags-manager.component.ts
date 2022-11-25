@@ -36,6 +36,10 @@ export class TagsManagerComponent implements OnInit {
     return this.workspaceService.checkTag(tag);
   }
 
+  tagIsUsed(tag: string) {
+    return this.workspaceService.tagIsUsed(tag);
+  }
+
   createNewTag(tag: string) {
     if (!this.checkTag(tag)) {
       this.workspaceService.createTag(tag);

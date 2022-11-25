@@ -22,6 +22,10 @@ export class WorkspaceService {
     return this.tags.includes(tag);
   }
 
+  tagIsUsed(tag: string) {
+    return this.notes.some((note) => note.tags.includes(tag));
+  }
+
   getTags(): Observable<string[]> {
     return of(this.tags);
   }
