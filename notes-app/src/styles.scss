@@ -37,6 +37,7 @@ $notes-app-theme: mat.define-light-theme(
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import 'src/app/shared/styles/shared';
 
 html,
 body {
@@ -52,7 +53,7 @@ html * {
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(109.8deg, #f8c2e8 0%, #00c5cb 100%);
+  background: linear-gradient(109.8deg, $pink 0%, $aqua 100%);
 }
 a {
   text-decoration: none;
@@ -60,14 +61,14 @@ a {
 }
 
 .highlighted {
-  color: #00c5cb;
+  color: $aqua;
 }
 
 .tooltip * {
   font-size: 1rem;
   white-space: pre-wrap;
   color: black !important;
-  background: #f8c2e8 !important;
+  background: $pink !important;
   max-width: unset !important;
 }
 

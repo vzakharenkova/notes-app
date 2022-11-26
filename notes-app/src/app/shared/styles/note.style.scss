@@ -66,9 +66,10 @@
 
 .tag {
   transition: $hover-transition;
+  color: $aqua;
+  font-weight: bold;
   cursor: pointer;
   &:hover {
-    color: rgb(0, 197, 203);
-    @include hover-tag();
+    @include hover-text();
   }
 }

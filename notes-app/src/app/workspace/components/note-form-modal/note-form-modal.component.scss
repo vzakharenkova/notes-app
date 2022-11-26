@@ -15,7 +15,7 @@
 
   .close_btn {
     align-self: flex-end;
-    background: #00c5cb;
+    background: $aqua;
 
     &:hover {
       @include hover-element;
@@ -78,6 +78,10 @@
     .action_btn {
       width: 7rem;
       align-self: center;
+
+      &:disabled {
+        opacity: 0.3;
+      }
     }
   }
 }
