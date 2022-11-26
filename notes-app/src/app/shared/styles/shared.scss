@@ -1,0 +1,20 @@
+$aqua: #00c5cb;
+$pink: #f8c2e8;
+
+$padding-x: 3rem;
+$padding-y: 1.5rem;
+$sidenav-padding: $padding-y $padding-x $padding-y 1.5rem;
+
+$header-heignt: 6rem;
+$footer-heignt: 4.7rem;
+$main-heignt: calc(100vh - $header-heignt - $footer-heignt);
+
+$hover-transition: all 0.3s;
+
+@mixin hover-element {
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+@mixin hover-text {
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}

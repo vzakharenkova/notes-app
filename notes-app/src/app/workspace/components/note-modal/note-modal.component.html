@@ -1,0 +1,21 @@
+<div mat-dialog class="note" [ngClass]="data.note.color">
+  <button mat-dialog-close mat-mini-fab class="close_btn">
+    <mat-icon>clear</mat-icon>
+  </button>
+  <div class="note_content">
+    <h2 class="note_title" appHighlight [text]="data.note.title"></h2>
+    <div class="note_description" appHighlight [text]="data.note.description"></div>
+    <div *ngIf="data.note.tags && data.note.tags.length; else elseBlock" class="note_tags">
+      <span *ngFor="let tag of data.note.tags" class="tag" (click)="filterByTag(tag)"
+        >#{{ tag }}</span
+      >
+    </div>
+    <ng-template #elseBlock>No selected tags</ng-template>
+  </div>
+  <div class="note_actions">
+    <button mat-raised-button class="edit_btn btn" (click)="openEditModal()">Edit</button>
+    <button mat-raised-button class="delete_btn btn" (click)="openConfirmationModal()">
+      Delete
+    </button>
+  </div>
+</div>

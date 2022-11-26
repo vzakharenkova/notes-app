@@ -1,0 +1,18 @@
+{
+  "notes": [
+    {
+      "id": "8",
+      "title": "#shopping",
+      "description": "Buy #apple",
+      "tags": ["apple"],
+      "color": "pink"
+    },
+    {
+      "id": "6",
+      "title": "Morning",
+      "description": "#car",
+      "tags": ["car"],
+      "color": "grape"
+    }
+  ]
+}
